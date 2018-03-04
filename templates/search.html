@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block log %}
+  
+  <li><a href="#"> Hello {{name}}</a></li>
+  <li><a href="{{ url_for('add') }}">Add Calendar</a></li>
+  <li><a href="{{ url_for('search') }}">Search</a></li>
+  <li><a href="{{ url_for('logout') }}">Logout</a></li>
+{% endblock %}
+{% block container %}
+	<div class="container forms">
+		<br>
+		<br>
+		<br>
+	  	<form method="POST" action="/search/result">
+	  		{{ form.hidden_tag() }}
+	    	{{ wtf.form_field(form.keyword) }}
+	    	<button class="btn btn-lg btn-primary btn-block " type="submit">Search</button>
+	  	</form>
+</div>
+{% endblock %}

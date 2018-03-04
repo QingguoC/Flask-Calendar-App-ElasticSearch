@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block log %}
+  
+  <li><a href="#"> Hello {{name}}</a></li>
+  <li><a href="{{ url_for('add') }}">Add Calendar</a></li>
+  <li><a href="{{ url_for('search') }}">Search</a></li>
+  <li><a href="{{ url_for('logout') }}">Logout</a></li>
+{% endblock %}
+{% block container %}
+	<div class="container">
+		<br>
+		<br>
+		<h1>Search Results for "<span style="color: green">{{searchval}}</span>"</h1>
+		<br>
+		<h3>Total hits: {{result['hits']['total']}}</h3>
+		<ul  >
+			{% for hit in result['hits']['hits'] %}
+
+               <li><a href="{{ url_for('.calendar', id = hit['_id']) }}">{{ hit['_source']['time'] }}</a></li>
+			{% endfor %}
+     	</ul>
+     	<nav aria-label="Page navigation">
+		  <ul class="pagination">
+		    <li class="page-item"><a class="page-link" href="{{ url_for('.result', searchval = searchval,from_ = from_ - pagesize, scoll = "p") }}">Previous</a></li>
+		    
+		    <li class="page-item"><a class="page-link" href="{{ url_for('.result', searchval = searchval, from_ = from_ + pagesize,scoll = "n") }}">Next</a></li>
+		  </ul>
+		</nav>    
+	</div>
+{% endblock %}

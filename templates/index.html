@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block log %}
+  <li><a href="{{ url_for('add') }}">Add Calendar</a></li>
+  <li><a href="{{ url_for('search') }}">Search</a></li>
+  <li><a href="{{ url_for('login') }}">Login</a></li>
+  <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+{% endblock %}
+{% block container %}
+  <div class="container">
+
+    <div class="starter-template">
+      <h1>Code Exercise</h1>
+      <br>
+      <br>
+      <p class="lead"> Register, Login, Add Calendar and Search <br> Python/MySQL/MongoDB/ElasticSearch</p>
+    </div>
+  </div>
+{% endblock %}
+

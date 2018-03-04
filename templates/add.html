@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block log %}
+  
+  <li><a href="#"> Hello {{name}}</a></li>
+  <li><a href="{{ url_for('add') }}">Add Calendar</a></li>
+  <li><a href="{{ url_for('search') }}">Search</a></li>
+  <li><a href="{{ url_for('logout') }}">Logout</a></li>
+{% endblock %}
+{% block container %}
+<div class="container forms">
+	<h2>Add Calendar Event</h2>
+
+  	<form method="POST" action="/add">
+  
+    {{ form.hidden_tag() }}
+    {{ wtf.form_field(form.eventname) }}
+    {{ wtf.form_field(form.time) }}
+    {{ wtf.form_field(form.note) }}
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
+  </form>
+
+</div> <!-- /container -->
+{% endblock %}

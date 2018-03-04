@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block log %}
+  
+  <li><a href="#"> Hello {{name}}</a></li>
+  <li><a href="{{ url_for('add') }}">Add Calendar</a></li>
+  <li><a href="{{ url_for('search') }}">Search</a></li>
+  <li><a href="{{ url_for('logout') }}">Logout</a></li>
+{% endblock %}
+{% block container %}
+	<div class="container">
+		<br>
+		<br>
+		<h1>Calendar</h1>
+		<br>
+		<table class="table">
+           <thead>
+             <tr>
+              <th>Event</th>
+              <th>Time</th>
+              <th>Note</th>
+               <th>CreatedBy</th>
+               <th>CreatedDate</th>
+             </tr>
+           </thead>
+
+           <tbody>
+             <tr>
+               
+               <td>{{doc['eventname']}}</td>
+               <td>{{doc['time']}}</td>
+               <td>{{doc['note']}}</td>
+               <td>{{doc['createdBy']}}</td>
+               <td>{{doc['createdDate']}}</td>
+             </tr>
+           </tbody>
+         </table>
+	</div>
+{% endblock %}
