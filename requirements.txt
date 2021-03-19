@@ -9,7 +9,7 @@ Flask-PyMongo==0.5.1
 Flask-SQLAlchemy==2.3.2
 Flask-WTF==0.14.2
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 MarkupSafe==1.0
 pew==1.1.2
 pipenv==11.0.2
