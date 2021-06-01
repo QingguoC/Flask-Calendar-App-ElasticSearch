@@ -19,7 +19,7 @@ pymongo==3.6.1
 PyMySQL==0.8.0
 python-dotenv==0.8.0
 SQLAlchemy==1.2.4
-urllib3==1.22
+urllib3==1.26.5
 virtualenv==15.1.0
 virtualenv-clone==0.3.0
 visitor==0.1.3
